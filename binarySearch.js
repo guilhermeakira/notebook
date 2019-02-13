@@ -32,6 +32,6 @@ function binarySearchIterative(arr, value) {
 }
 
 let arr = [1,2,4,5,7,8,9,12,15,20]
-let value = 21
+let value = 2
 console.log(binarySearchRecursive(arr, value, 0, arr.length - 1))
 console.log(binarySearchIterative(arr, value))

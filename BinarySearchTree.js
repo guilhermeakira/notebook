@@ -130,6 +130,16 @@ class BinarySearchTree {
         }
         return node
     }
+
+    checkBST(root, min, max) {
+        if (root === null) {
+            return true
+        }
+        if (root.data < min || root.data > max) {
+            return false
+        }
+        return this.checkBST(root.left, min, root.data - 1) && this.checkBST(root.right, root.data + 1, max)
+    }
 }
 
 const tree = new BinarySearchTree()
@@ -143,3 +153,4 @@ tree.insert(7)
 // tree.remove(5)
 tree.inorder(tree.root)
 console.log(tree.search(tree.root, 20))
+console.log(tree.checkBST(tree.root, -Infinity, +Infinity))
